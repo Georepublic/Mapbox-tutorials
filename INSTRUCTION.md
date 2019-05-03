@@ -24,7 +24,7 @@ Ctrl(CMD) + N を押し、新規ファイルを作成、index.html という名�
 
 まずはhtmlファイルを書いて公開してみましょう。先ほどの index.html に下記の内容をコピペして、github にPushしてみます
 
-```
+```:html
 <!DOCTYPE html>
 <html>
   <head>
