@@ -41,7 +41,7 @@ Github で、このhtmlをホストできるように設定しましょう。
 リポジトリのページへ行き、Settings タブにある、GitHub Pages のコーナーで、source ブランチを master ブランチにします。
 すると、
 
-  Your site is published at (URL)
+`Your site is published at (URL)`
  
 と表示されると思います。URLにアクセスすると、上記のhtmlファイルが表示されます。（反映に少し時間がかかります。）
  
@@ -53,16 +53,16 @@ Github で、このhtmlをホストできるように設定しましょう。
 ![image](./images/select-platform.jpg)
 
 今回の場合はWebサイトで利用するので、JS(Web)を選びます。
-"Select a method for installing Mapbox GL JS" では、Use the Mapbox CDNを選びましょう。（利用するJavaScriptをMapboxのCDNに置いておく方法です）
+`Select a method for installing Mapbox GL JS` では、Use the Mapbox CDNを選びましょう。（利用するJavaScriptをMapboxのCDNに置いておく方法です）
 
-次のページで、以下のような2行のHTMLコードが表示されているはずです。それを、先ほど作ったindex.htmlファイルの</head>行の上にコピーペーストしましょう。
+次のページで、以下のような2行のHTMLコードが表示されているはずです。それを、先ほど作ったindex.htmlファイルの`</head>`行の上にコピーペーストしましょう。
 
 ```html
 <script src='https://static-assets.mapbox.com/gl-pricing/dist/mapbox-gl.js'></script>
 <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
 ```
 
-Next リンクをクリックすると、またコードが出てきます。今度は</body>行の上にコピーペーストします。
+Next リンクをクリックすると、またコードが出てきます。今度は`</body>`行の上にコピーペーストします。
 
 ```html
 <div id='map' style='width: 400px; height: 300px;'></div>
