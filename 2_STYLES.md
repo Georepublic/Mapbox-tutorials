@@ -108,6 +108,23 @@ zoom レベルが上がると表示がされるようになっています。
 Select Data タブを見てみると、Mapbox Traffic V1 の traffic という Data Source が使われているようです。その中に、congestion というプロパティがあり、stops に応じて色を変更していることがわかります。
 （混雑している道を赤く表示しています）
 
+## ナビゲーションコントロールや検索ボックスを追加する
+
+ユーザビリティを向上するために、拡大・縮小のコントローラや、検索ボックスを追記してみましょう。
+index.html を開き、`</script>`行の直前に以下の行を追記します。
+
+```JavaScript
+// Navigation Control
+map.addControl(
+ new mapboxgl.NavigationControl(), 'top-left'
+);
+// Geocoder Control
+map.addControl(
+    new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken
+}));
+```
+
 ## 地図変更のその他の方法
 Mapbox のテンプレートもさまざまなものがありますが、[Cartogram](https://apps.mapbox.com/cartogram/) というツールを使うと、写真などから色を指定して、好みの色の地図をつくることができます。
 

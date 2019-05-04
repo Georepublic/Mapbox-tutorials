@@ -17,6 +17,15 @@ center: [139.750,35.676],
 zoom: 12,
 style: 'mapbox://styles/georepublic/cjv92hvw9km4e1fnutb18t9ya'
 });
+// Navigation Control
+map.addControl(
+ new mapboxgl.NavigationControl(), 'top-left'
+);
+// Geocoder Control
+map.addControl(
+ new MapboxGeocoder({
+   accessToken: mapboxgl.accessToken
+}));
 </script>
 	</body>
 </html>
