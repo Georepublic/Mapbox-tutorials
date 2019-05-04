@@ -58,3 +58,62 @@ style: 'mapbox://styles/georepublic/......'
 });
 ```
 
+地図が日本語表記に変わっていたら成功です。
+
+
+## もっとデザインを変更する
+
+左側のリストから、background、park、building などを選んで、色を変更してみましょう。デザインが変更できることがわかります。
+満足いくスタイルができたら、再度 Publish ボタンを押せば、地図を変更することができます。
+
+### もっと詳しく
+
+地図のデザインのもととなるデータには、Line, Point, Polygon, Text など様々な種類があります。それぞれ、線、点、面、テキストの色を塗り分けることで地図を表現しています。
+左側のリストにある、road_street は Line、park は Polygon、country-label-lg などは Text です。
+これらの表示条件や色の設定、テキストのフォントや表示位置などを変更することで、地図のデザインを変更できます。
+
+表示条件とは、例えばzoomレベルです。building のデータをみてみましょう。
+zoom レベルが上がると表示がされるようになっています。
+
+また、traffic-motorway-trunk を選んでみてください。これは、交通量のデータです。color の所を選ぶと、Data-driven function となっていることがわかります。
+動的に line color を変更しているのです。Json という形式で書かれており、以下のようになっています。
+
+```json
+{
+  "base": 1,
+  "type": "categorical",
+  "property": "congestion",
+  "stops": [
+    [
+      "low",
+      "hsl(180, 56%, 33%)"
+    ],
+    [
+      "moderate",
+      "hsl(25, 100%, 66%)"
+    ],
+    [
+      "heavy",
+      "hsl(0, 100%, 70%)"
+    ],
+    [
+      "severe",
+      "hsl(0, 67%, 50%)"
+    ]
+  ],
+  "default": "hsl(340, 57%, 37%)"
+}
+```
+
+Select Data タブを見てみると、Mapbox Traffic V1 の traffic という Data Source が使われているようです。その中に、congestion というプロパティがあり、stops に応じて色を変更していることがわかります。
+（混雑している道を赤く表示しています）
+
+## 地図変更のその他の方法
+Mapbox のテンプレートもさまざまなものがありますが、[Cartogram](https://apps.mapbox.com/cartogram/) というツールを使うと、写真などから色を指定して、好みの色の地図をつくることができます。
+
+Mapbox Studio を使わなくても、上記のような指定をプログラミングで行うことができます。
+
+* [Mapbox Studio のマニュアル](https://docs.mapbox.com/studio-manual/overview/)
+* [その他の How to Video](https://www.mapbox.com/videos/)
+
+[オリジナルのデータを追加する](3_DATASET.md)
