@@ -118,10 +118,12 @@ index.html を開き、`</script>`行の直前に以下の行を追記します�
 map.addControl(
  new mapboxgl.NavigationControl(), 'top-left'
 );
-// Geocoder Control
-map.addControl(
-    new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken
+// Geolocation Control
+map.addControl(new mapboxgl.GeolocateControl({
+  positionOptions: {
+    enableHighAccuracy: true
+  },
+  trackUserLocation: true
 }));
 ```
 
