@@ -75,3 +75,6 @@ mapboxgl.Popup という関数を呼び出し、緯度経度やHTMLを設定し�
 データにどんなプロパティが存在しているのかは、`Dataset Editor` から参照できます。
 保育所データの場合、SAFIELD000 が施設名、 SAFIELD002 が施設の分類、 SAFIELD003 が住所になっています。
 
+[サンプルのHTMLはこちらです](index3.html)
+
+[ジオコーダーをつける](5_GEOCODING.md)に続きます。
