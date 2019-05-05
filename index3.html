@@ -32,7 +32,7 @@ map.addControl(new mapboxgl.GeolocateControl({
 // Popup event
 map.on('click', function(e) {
   var features = map.queryRenderedFeatures(e.point, {
-    layers: ['hoikusho'] // 前回作成した Hoikusho のタイルセットを表示しているレイヤーの名前を使います。
+    layers: ['hoikusho', 'hoikusho_area'] // 前回作成した Hoikusho のタイルセットを表示しているレイヤーの名前を使います。
   });
 
   if (!features.length) {
