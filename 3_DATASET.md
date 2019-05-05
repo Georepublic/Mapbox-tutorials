@@ -96,4 +96,4 @@ Publish ボタンを押し、反映を確認しましょう
 
 ![image](./images/show-polygon.jpg)
 
-
+[4. インタラクティブな機能をつける](./4_INTERACTIVE.md)に続きます

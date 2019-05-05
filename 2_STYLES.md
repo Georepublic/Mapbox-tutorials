@@ -8,9 +8,11 @@
 
 まずは、地図の大きさを広げましょう。index.html の中の、`<div id='map'` の部分が地図の領域なので、width と height を変更します。
 
-`<div id='map' style='width: 800px; height: 600px;'></div>`
+`<div id='map' style='width: 100%; height: 600px;'></div>`
 
-これで、少し地図が大きくなりました。
+これで、地図が画面いっぱいに表示されるようになりました。
+
+
 
 ## カスタムスタイルを作る
 
