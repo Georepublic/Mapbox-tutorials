@@ -30,7 +30,48 @@ map.on('click', function(e) {
   var popup = new mapboxgl.Popup({ offset: [0, -15] })
     .setLngLat(feature.geometry.coordinates)
     .setHTML('<h3>' + feature.properties.SAFIELD000 + '</h3><p>' + feature.properties.SAFIELD002 + '<br/>' + feature.properties.SAFIELD003 + '</p>')
-    .setLngLat(feature.geometry.coordinates)
     .addTo(map);
 });
 ```
+
+これを保存し、ブラウザで開いたのちに、地図上のアイコンをクリックしてみてください。ポップアップが表示されると思います。
+
+![image](images/popup.jpg)
+
+コードについて解説をしていきます。
+
+```script
+map.on('click', function(e) {
+```
+マップがクリックされた際に、以下のコードが実行されるという意味です。
+
+```javascript
+  var features = map.queryRenderedFeatures(e.point, {
+    layers: ['hoikusho'] // 前回作成した Hoikusho のタイルセットを表示しているレイヤーの名前を使います。
+  });
+```
+この行では、Mapbos Studio の左側のレイヤーリストの中の、hoikusho レイヤーから `e.point` (クリックした場所) の情報のみを取り出しています。
+
+```javascript
+  if (!features.length) {
+    return;
+  }
+```
+クリックした場所に、Hoikusho レイヤーの情報がなければ何もせずに終わります。
+
+```javascript
+  var feature = features[0];
+```
+最初のデータを取得します
+
+```javascript
+  var popup = new mapboxgl.Popup({ offset: [0, -15] })
+    .setLngLat(feature.geometry.coordinates)
+    .setHTML('<h3>' + feature.properties.SAFIELD000 + '</h3><p>' + feature.properties.SAFIELD002 + '<br/>' + feature.properties.SAFIELD003 + '</p>')
+    .addTo(map);
+```
+mapboxgl.Popup という関数を呼び出し、緯度経度やHTMLを設定し、map に追加しています。
+`feature.geometry.coordinates`はデータの緯度経度で、`feature.propertries` には、データのプロパティが含まれています。
+データにどんなプロパティが存在しているのかは、`Dataset Editor` から参照できます。
+保育所データの場合、SAFIELD000 が施設名、 SAFIELD002 が施設の分類、 SAFIELD003 が住所になっています。
+
