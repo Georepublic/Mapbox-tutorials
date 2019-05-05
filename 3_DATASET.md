@@ -8,6 +8,8 @@ Mapbox Studio から登録できるデータには、データセット(dataset)
 データセットからは、Point, Line, Polygon といったデータや属性(property)へアクセスでき、 共にMapbox Studio dataset editor や Datasets API 経由で編集をすることができます。
 
 タイルセットは、ベクター形式の軽量なデータ集合で、高速な描画に最適化されています。読み取り専用で、Mapbox Studio 上からは編集できません。
+この、タイルセットの機能が、Google Maps などと Mapbox が大きく違う点です。Google Maps で GeoJson などのカスタムデータを表示する場合、データの転送やクライアントでの処理が発生するため、表示させるデータ量が大きくなった場合に描画に時間がかかってしまいます。
+それに対し、Mapbox のタイルセットはベクタータイル（Vector Tiles）という仕組みを使っているために、その時表示している範囲のデータのみをクライアントに転送することができ、軽量です。
 
 更に詳細な比較については、[Mapboxのドキュメント](https://docs.mapbox.com/help/troubleshooting/uploads/)を見てください
 
