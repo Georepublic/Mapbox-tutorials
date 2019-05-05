@@ -43,7 +43,7 @@ map.on('click', function(e) {
 
   var popup = new mapboxgl.Popup({ offset: [0, -15] })
     .setLngLat(feature.geometry.coordinates)
-    .setHTML('<h3>' + feature.properties.SAFIELD000 + '</h3><p>' + feature.properties.SAFIELD002 + '</p>')
+    .setHTML('<h3>' + feature.properties.SAFIELD000 + '</h3><p>' + feature.properties.SAFIELD002 + '<br/>' + feature.properties.SAFIELD003 + '</p>')
     .setLngLat(feature.geometry.coordinates)
     .addTo(map);
 });
