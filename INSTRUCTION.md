@@ -12,3 +12,4 @@ https://github.com/join?source=header-home からサインアップする
 2. [スタイルを変更する](2_STYLES.md)
 3. [オリジナルデータを登録する](3_DATASET.md)
 4. [ポップアップ機能をつける](4_POPUP.md)
+5. [ジオコーダーをつける](5_GEOCODING.md)
