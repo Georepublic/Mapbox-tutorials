@@ -30,8 +30,7 @@ var geocoder = new MapboxGeocoder({
   accessToken: mapboxgl.accessToken, // Set the access token
   mapboxgl: mapboxgl, // Set the mapbox-gl instance
 });
-
-map.addControl(geocoder, 'top-left');
+map.addControl(geocoder, 'top-right');
 
 // Geolocation Control
 map.addControl(new mapboxgl.GeolocateControl({
