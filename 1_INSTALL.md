@@ -73,4 +73,4 @@ style: 'mapbox://styles/mapbox/streets-v11'
 
 ![image](./images/map-1.jpg)
 
-次：[スタイルを変更する](2_STYLES.md)へ
+[2. スタイルを変更する](2_STYLES.md)へ続きます。

@@ -96,4 +96,6 @@ Publish ボタンを押し、反映を確認しましょう
 
 ![image](./images/show-polygon.jpg)
 
+これで再度Publishをして先ほどの index.html を表示してみると、新しく追加したポリゴンも表示されるはずです（反映されるまで少し時間がかかる場合があります）
+
 [4. インタラクティブな機能をつける](./4_INTERACTIVE.md)に続きます

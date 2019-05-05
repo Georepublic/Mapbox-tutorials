@@ -145,4 +145,4 @@ Mapbox Studio を使わなくても、上記のような指定をプログラミ
 * [Mapbox Studio のマニュアル](https://docs.mapbox.com/studio-manual/overview/)
 * [その他の How to Video](https://www.mapbox.com/videos/)
 
-[オリジナルのデータを追加する](3_DATASET.md)
+[3. オリジナルのデータを追加する](3_DATASET.md)に続きます
