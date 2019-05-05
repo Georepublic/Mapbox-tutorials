@@ -24,4 +24,3 @@ var geocoder = new MapboxGeocoder({
 
 map.addControl(geocoder, 'top-left');
 ```
-

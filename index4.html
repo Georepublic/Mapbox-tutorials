@@ -29,7 +29,6 @@ map.addControl(
 var geocoder = new MapboxGeocoder({
   accessToken: mapboxgl.accessToken, // Set the access token
   mapboxgl: mapboxgl, // Set the mapbox-gl instance
-  language: 'ja'
 });
 
 map.addControl(geocoder, 'top-left');
@@ -59,6 +58,6 @@ map.on('click', function(e) {
     .addTo(map);
 });
 
- </script>
+</script>
   </body>
 </html>
