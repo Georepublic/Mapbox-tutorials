@@ -12,7 +12,11 @@
 
 これで、地図が画面いっぱいに表示されるようになりました。
 
+また、モバイルから表示された場合に最適化するため、`<title>`タグの上あたりに、viewport の指定をつけておきましょう。
 
+```html
+<meta name="viewport" content="width=device-width,initial-scale=1">
+```
 
 ## カスタムスタイルを作る
 
@@ -21,7 +25,7 @@ Mapbox のデザインを変更する方法はいくつかありますが、こ�
 
 ![image](images/mbstudio.jpg) 
 
-New Style を選択すると、元となるスタイルを選べます。好きな地図を選ぶと、マップスタイルの編集画面に移ります。今回は、Mavigation Preview Night を選択します。
+New Style を選択すると、元となるスタイルを選べます。好きな地図を選ぶと、マップスタイルの編集画面に移ります。今回は、`Navigation Preview Night` を選択します。
 
 ![image](images/mbstudio-edit.jpg)
 
@@ -45,6 +49,9 @@ New Style を選択すると、元となるスタイルを選べます。好き�
 スタイルの編集画面に移り、左側のパネルから、`Filter Layers` をつかい、`Filter by values` を選び、`{text fields}` を探します。
 検索ボックスに name_en と入力すると、`Text field {name_en}` というフィルタが見つかるので、それを選択します。
 すると、左側のスタイルが全てこの値を含んだものに絞り込まれます。それぞれを選択し、name_en の部分を name に変更します。
+
+![image](images/select-name-en.jpg)
+
 すべて変更したら Publish ボタンを押しましょう。
 
 地図の中心点も、東京にしておきましょう。エディタ画面の地図内のボックス右下に、現在表示している場所の中心点の緯度経度が表示されていますので、これをコピーして、index.html の `style:..` 行に `center:[経度,緯度],` として設定します。
@@ -74,10 +81,11 @@ style: 'mapbox://styles/georepublic/......'
 左側のリストにある、road_street は Line、park は Polygon、country-label-lg などは Text です。
 これらの表示条件や色の設定、テキストのフォントや表示位置などを変更することで、地図のデザインを変更できます。
 
-表示条件とは、例えばzoomレベルです。building のデータをみてみましょう。
-zoom レベルが上がると表示がされるようになっています。
+表示条件とは、例えばzoomレベルです。building のデータをみてみましょう。左側のリストから building を選択し、`Select data` 、`Zoom extent` を選ぶと、ズームレベルが15〜22の場合に表示されるようになっています。
 
-また、traffic-motorway-trunk を選んでみてください。これは、交通量のデータです。color の所を選ぶと、Data-driven function となっていることがわかります。
+![image](./images/building-type.jpg)
+
+また、`traffic-motorway-trunk` を選んでみてください。これは、交通量のデータです。color の所を選ぶと、`Data-driven function` となっていることがわかります。
 動的に line color を変更しているのです。Json という形式で書かれており、以下のようになっています。
 
 ```json
@@ -107,7 +115,7 @@ zoom レベルが上がると表示がされるようになっています。
 }
 ```
 
-Select Data タブを見てみると、Mapbox Traffic V1 の traffic という Data Source が使われているようです。その中に、congestion というプロパティがあり、stops に応じて色を変更していることがわかります。
+`Select data` タブを見てみると、`Mapbox Traffic V1` の traffic という Data source が使われているようです。その中に、congestion というプロパティがあり、stops に応じて色を変更していることがわかります。
 （混雑している道を赤く表示しています）
 
 ## ナビゲーションコントロールや検索ボックスを追加する
