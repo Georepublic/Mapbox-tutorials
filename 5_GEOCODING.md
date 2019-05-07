@@ -17,10 +17,18 @@ Geocoder は、Mapbox のプラグインとして提供されています。プ�
 ```javascript
 // Geocoder Control
 var geocoder = new MapboxGeocoder({
-  accessToken: mapboxgl.accessToken, // Set the access token
-  mapboxgl: mapboxgl, // Set the mapbox-gl instance
+  accessToken: mapboxgl.accessToken, // 既に設定してあるアクセストークン
+  mapboxgl: mapboxgl, // mapbox-gl のインスタンス
   language: 'ja'
 });
 
 map.addControl(geocoder, 'top-left');
 ```
+
+これで、地図上に検索ボックスがつきました。
+検索ボックスに文字を入力してみると候補が表示され、選択するとその場所へ飛ぶことがわかります。
+
+ただし、詳細の住所などを入力しても、検索結果が表示されません。ゼンリンがデータソースとして活用できるようになるまでは、ジオコーディングの精度の悪さは課題の一つです。
+ 
+ジオコーディングの詳細については、[公式ドキュメント](https://docs.mapbox.com/help/how-mapbox-works/geocoding/)を確認してください。
+
