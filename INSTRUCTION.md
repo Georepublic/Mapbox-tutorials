@@ -13,3 +13,9 @@ https://github.com/join?source=header-home からサインアップする
 3. [オリジナルデータを登録する](3_DATASET.md)
 4. [ポップアップ機能をつける](4_POPUP.md)
 5. [ジオコーダーをつける](5_GEOCODING.md)
+
+# サンプルコード集
+
+1. [Pure CSS Marker](examples/pure_css_marker.html)
+2. [Numbered Marker](examples/numbered_marker.html)
+3. [Font Awesome Marker](examples/font_awesome_marker.html)

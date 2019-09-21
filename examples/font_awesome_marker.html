@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>My test page</title>
+    <script src='https://static-assets.mapbox.com/gl-pricing/dist/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://kit.fontawesome.com/9b0eb4b9b8.js'></script>
+    <link href='./pure_css_marker.css' rel='stylesheet' />
+  </head>
+  <body>
+    <h1>Font Awesome Marker</h1>
+    <div id='map' style='width: 100%; height: 600px;'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiZ2VvcmVwdWJsaWMiLCJhIjoiellVaWIzWSJ9.Wk5J9hr4T2qWOOEcmc1uyg';
+var map = new mapboxgl.Map({
+container: 'map',
+center: [139.75037,35.67087],
+zoom: 15,
+style: 'mapbox://styles/georepublic/cjvw34h830hx01cpgws5f0mpt'
+});
+// Navigation Control
+map.addControl(
+  new mapboxgl.NavigationControl(), 'top-left'
+);
+// Geolocation Control
+map.addControl(new mapboxgl.GeolocateControl({
+  positionOptions: {
+    enableHighAccuracy: true
+  },
+  trackUserLocation: true
+}));
+// Add pure css marker
+var geojson = {
+  type: 'FeatureCollection',
+  features: [{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [139.75037,35.67087]
+    },
+    properties: {
+      title: 'Georepublic Japan',
+      type: 'company'
+    }
+  },{
+    type: 'Feature',
+    geometry: {
+      type: 'Point',
+      coordinates: [139.75237,35.67087]
+    },
+    properties: {
+      title: 'Ramen shop',
+      type: 'restaurant'
+    }
+  }]
+}
+geojson.features.forEach(function(marker) {
+    // create a HTML element for each feature
+    var el = document.createElement('div');
+    if (marker.properties.type == 'company'){
+        el.innerHTML = '<span><i class="fas fa-building"></i></span>';
+    }else if(marker.properties.type = 'restaurant'){
+        el.innerHTML = '<span><i class="fas fa-utensils"></i></span>';
+    }
+    el.className = 'marker';
+    // make a marker for each feature and add to the map
+    new mapboxgl.Marker(el)
+    .setLngLat(marker.geometry.coordinates)
+    .addTo(map);
+});
+
+ </script>
+ <a href="../INSTRUCTION.md">Back to index</a>
+  </body>
+</html>
